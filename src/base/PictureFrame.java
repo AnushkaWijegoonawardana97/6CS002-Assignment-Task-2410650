@@ -14,7 +14,7 @@ import javax.swing.JPanel;
  */
 
 public class PictureFrame {
-	public int[] reroll = null;
+//	public int[] reroll = null;
 	public Main master = null;
 
 	class DominoPanel extends JPanel {
