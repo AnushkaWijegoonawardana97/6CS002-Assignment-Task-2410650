@@ -8,18 +8,18 @@ package base;
 public class SpacePlace {
 	private int xOrg;
 	private int yOrg;
-	private double theta;
-	private double phi;
+	private PolarCoordinates polarCoordinates;
 
 	public SpacePlace() {
 		xOrg = 0;
 		yOrg = 0;
+		polarCoordinates = new PolarCoordinates(0.0, 0.0);
 	}
 
-	public SpacePlace(double theta, double phi) {
-		super();
-		this.theta = theta;
-		this.phi = phi;
+	public SpacePlace(PolarCoordinates polarCoordinates) {
+		this.xOrg = 0;
+		this.yOrg = 0;
+		this.polarCoordinates = polarCoordinates;
 	}
 
 	public int getxOrg() {
@@ -38,20 +38,11 @@ public class SpacePlace {
 		this.yOrg = yOrg;
 	}
 
-	public double getTheta() {
-		return theta;
+	public PolarCoordinates getPolarCoordinates() {
+		return polarCoordinates;
 	}
 
-	public void setTheta(double theta) {
-		this.theta = theta;
+	public void setPolarCoordinates(PolarCoordinates polarCoordinates) {
+		this.polarCoordinates = polarCoordinates;
 	}
-
-	public double getPhi() {
-		return phi;
-	}
-
-	public void setPhi(double phi) {
-		this.phi = phi;
-	}
-
 }
