@@ -11,7 +11,7 @@ public class MultiLingualStringTable {
 	/**
 	 * Enumeration representing the available language settings.
 	 */
-	private enum LanguageSetting {
+	public enum LanguageSetting {
 		English, Klingon
 	}
 
@@ -44,6 +44,11 @@ public class MultiLingualStringTable {
 		} else {
 			return klingonLanguageMessage[index];
 		}
+
+	}
+
+	public static void setCurrentSelectedLanguage(LanguageSetting english) {
+		// TODO Auto-generated method stub
 
 	}
 }

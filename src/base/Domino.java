@@ -28,6 +28,10 @@ public class Domino implements Comparable<Domino> {
 		this.setLow(low);
 	}
 
+	public Domino(int i, int j, int k, int l) {
+		// TODO Auto-generated constructor stub
+	}
+
 	/**
 	 * Places the domino on the grid with specified coordinates.
 	 * 
