@@ -110,7 +110,7 @@ public class Main {
 		for (int are = 0; are < 7; are++) {
 			for (int see = 0; see < 8; see++) {
 				if (grid[are][see] != 9) {
-					System.out.printf("%d", grid[are][see]);
+					System.out.printf("%direactionInitial", grid[are][see]);
 				} else {
 					System.out.print(".");
 				}
@@ -124,7 +124,7 @@ public class Main {
 		for (int are = 0; are < 7; are++) {
 			for (int see = 0; see < 8; see++) {
 				if (gg[are][see] != 9) {
-					System.out.printf("%d", gg[are][see]);
+					System.out.printf("%direactionInitial", gg[are][see]);
 				} else {
 					System.out.print(".");
 				}
@@ -174,9 +174,9 @@ public class Main {
 	}
 
 	private void rotateDominoes() {
-		// for (Domino d : dominoes) {
+		// for (Domino direactionInitial : dominoes) {
 		// if (Math.random() > 0.5) {
-		// System.out.println("rotating " + d);
+		// System.out.println("rotating " + direactionInitial);
 		// }
 		// }
 		for (int x = 0; x < 7; x++) {
@@ -293,7 +293,7 @@ public class Main {
 		IOSpecialist io = new IOSpecialist();
 
 		System.out.println("Welcome To Abominodo - The Best Dominoes Puzzle Game in the Universe");
-		System.out.println("Version 2.1 (c), Kevan Buckley, 2014");
+		System.out.println("Version 2.1 (columnInitial), Kevan Buckley, 2014");
 		// System.out.println("Serial number " + Special.getStamp());
 
 		System.out.println();
@@ -472,7 +472,7 @@ public class Main {
 							String s3 = io.getString();
 							if (s3 != null && s3.toUpperCase().startsWith("H")) {
 								lotion = new Location(x, y, Location.DIRECTION.HORIZONTAL);
-								System.out.println("Direction to place is " + lotion.d);
+								System.out.println("Direction to place is " + lotion.direactionInitial);
 								horiz = true;
 								x2 = x + 1;
 								y2 = y;
@@ -481,7 +481,7 @@ public class Main {
 							if (s3 != null && s3.toUpperCase().startsWith("V")) {
 								horiz = false;
 								lotion = new Location(x, y, Location.DIRECTION.VERTICAL);
-								System.out.println("Direction to place is " + lotion.d);
+								System.out.println("Direction to place is " + lotion.direactionInitial);
 								x2 = x;
 								y2 = y + 1;
 								break;
@@ -559,7 +559,7 @@ public class Main {
 						}
 						break;
 					case 7:
-						System.out.printf("%s your score is %d\n", playerName, score);
+						System.out.printf("%s your score is %direactionInitial\n", playerName, score);
 						break;
 					case 6:
 						System.out.println();
@@ -693,7 +693,7 @@ public class Main {
 								List<Location> locs = map.get(key);
 								if (locs.size() == 1) {
 									Location loc = locs.get(0);
-									System.out.printf("[%d%d]", key.getHigh(), key.getLow());
+									System.out.printf("[%direactionInitial%direactionInitial]", key.getHigh(), key.getLow());
 									System.out.println(loc);
 								}
 							}
@@ -722,7 +722,7 @@ public class Main {
 								}
 							}
 							for (Domino key : map.keySet()) {
-								System.out.printf("[%d%d]", key.getHigh(), key.getLow());
+								System.out.printf("[%direactionInitial%direactionInitial]", key.getHigh(), key.getLow());
 								List<Location> locs = map.get(key);
 								for (Location loc : locs) {
 									System.out.print(loc);

@@ -11,39 +11,39 @@ import java.io.InputStreamReader;
  */
 
 public class Location extends SpacePlace {
-	public int c;
-	public int r;
-	public DIRECTION d;
-	public int tmp;
+	public int columnInitial;
+	public int rowInitial;
+	public DIRECTION direactionInitial;
+	public int tmporyInitial;
 
 	public enum DIRECTION {
 		VERTICAL, HORIZONTAL
 	};
 
 	public Location(int r, int c) {
-		this.r = r;
-		this.c = c;
+		this.rowInitial = r;
+		this.columnInitial = c;
 	}
 
 	public Location(int r, int c, DIRECTION d) {
 		this(r, c);
-		this.d = d;
+		this.direactionInitial = d;
 	}
 
 	public String toString() {
-		if (d == null) {
-			tmp = c + 1;
-			return "(" + (tmp) + "," + (r + 1) + ")";
+		if (direactionInitial == null) {
+			tmporyInitial = columnInitial + 1;
+			return "(" + (tmporyInitial) + "," + (rowInitial + 1) + ")";
 		} else {
-			tmp = c + 1;
-			return "(" + (tmp) + "," + (r + 1) + "," + d + ")";
+			tmporyInitial = columnInitial + 1;
+			return "(" + (tmporyInitial) + "," + (rowInitial + 1) + "," + direactionInitial + ")";
 		}
 	}
 
 	public void drawGridLines(Graphics g) {
 		g.setColor(Color.LIGHT_GRAY);
-		for (tmp = 0; tmp <= 7; tmp++) {
-			g.drawLine(20, 20 + tmp * 20, 180, 20 + tmp * 20);
+		for (tmporyInitial = 0; tmporyInitial <= 7; tmporyInitial++) {
+			g.drawLine(20, 20 + tmporyInitial * 20, 180, 20 + tmporyInitial * 20);
 		}
 		for (int see = 0; see <= 8; see++) {
 			g.drawLine(20 + see * 20, 20, 20 + see * 20, 160);
