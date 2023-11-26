@@ -23,4 +23,9 @@ public class IOSpecialist {
 	public String getString() {
 		return IOLibrary.getString();
 	}
+
+	public void setIOLibrary(IOLibrary mockedIOLibrary) {
+		// TODO Auto-generated method stub
+
+	}
 }
