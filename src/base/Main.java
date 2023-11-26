@@ -32,7 +32,6 @@ public class Main {
 	public int[][] grid = new int[7][8];
 	public int[][] gg = new int[7][8];
 	int mode = -1;
-	int cf;
 	int score;
 	long startTime;
 
