@@ -174,11 +174,6 @@ public class Main {
 	}
 
 	private void rotateDominoes() {
-		// for (Domino direactionInitial : dominoes) {
-		// if (Math.random() > 0.5) {
-		// System.out.println("rotating " + direactionInitial);
-		// }
-		// }
 		for (int x = 0; x < 7; x++) {
 			for (int y = 0; y < 6; y++) {
 
@@ -693,7 +688,8 @@ public class Main {
 								List<Location> locs = map.get(key);
 								if (locs.size() == 1) {
 									Location loc = locs.get(0);
-									System.out.printf("[%direactionInitial%direactionInitial]", key.getHigh(), key.getLow());
+									System.out.printf("[%direactionInitial%direactionInitial]", key.getHigh(),
+											key.getLow());
 									System.out.println(loc);
 								}
 							}
@@ -722,7 +718,8 @@ public class Main {
 								}
 							}
 							for (Domino key : map.keySet()) {
-								System.out.printf("[%direactionInitial%direactionInitial]", key.getHigh(), key.getLow());
+								System.out.printf("[%direactionInitial%direactionInitial]", key.getHigh(),
+										key.getLow());
 								List<Location> locs = map.get(key);
 								for (Location loc : locs) {
 									System.out.print(loc);
