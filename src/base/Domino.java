@@ -6,46 +6,54 @@ package base;
  */
 
 public class Domino implements Comparable<Domino> {
-	public int high;
-	public int low;
-	public int hx;
-	public int hy;
-	public int lx;
-	public int ly;
-	public boolean placed = false;
+	private int high;
+	private int low;
+	private int hx;
+	private int hy;
+	private int lx;
+	private int ly;
+	private boolean placed = false;
 
 	public Domino(int high, int low) {
 		super();
+		this.setHigh(high);
+		this.setLow(low);
+	}
+
+	public int getHigh() {
+		return high;
+	}
+
+	public void setHigh(int high) {
 		this.high = high;
-		this.low = low;
 	}
 
 	public void place(int hx, int hy, int lx, int ly) {
-		this.hx = hx;
-		this.hy = hy;
-		this.lx = lx;
-		this.ly = ly;
-		placed = true;
+		this.setHx(hx);
+		this.setHy(hy);
+		this.setLx(lx);
+		this.setLy(ly);
+		setPlaced(true);
 	}
 
 	public String toString() {
 		StringBuffer result = new StringBuffer();
 		result.append("[");
-		result.append(Integer.toString(high));
-		result.append(Integer.toString(low));
+		result.append(Integer.toString(getHigh()));
+		result.append(Integer.toString(getLow()));
 		result.append("]");
-		if (!placed) {
+		if (!isPlaced()) {
 			result.append("unplaced");
 		} else {
 			result.append("(");
-			result.append(Integer.toString(hx + 1));
+			result.append(Integer.toString(getHx() + 1));
 			result.append(",");
-			result.append(Integer.toString(hy + 1));
+			result.append(Integer.toString(getHy() + 1));
 			result.append(")");
 			result.append("(");
-			result.append(Integer.toString(lx + 1));
+			result.append(Integer.toString(getLx() + 1));
 			result.append(",");
-			result.append(Integer.toString(ly + 1));
+			result.append(Integer.toString(getLy() + 1));
 			result.append(")");
 		}
 		return result.toString();
@@ -54,24 +62,72 @@ public class Domino implements Comparable<Domino> {
 	/** turn the domino around 180 degrees clockwise */
 
 	public void invert() {
-		int tx = hx;
-		hx = lx;
-		lx = tx;
+		int tx = getHx();
+		setHx(getLx());
+		setLx(tx);
 
-		int ty = hy;
-		hy = ly;
-		ly = ty;
+		int ty = getHy();
+		setHy(getLy());
+		setLy(ty);
 	}
 
 	public boolean ishl() {
-		return hy == ly;
+		return getHy() == getLy();
 	}
 
 	public int compareTo(Domino arg0) {
-		if (this.high < arg0.high) {
+		if (this.getHigh() < arg0.getHigh()) {
 			return 1;
 		}
-		return this.low - arg0.low;
+		return this.getLow() - arg0.getLow();
+	}
+
+	public int getLow() {
+		return low;
+	}
+
+	public void setLow(int low) {
+		this.low = low;
+	}
+
+	public int getHx() {
+		return hx;
+	}
+
+	public void setHx(int hx) {
+		this.hx = hx;
+	}
+
+	public int getHy() {
+		return hy;
+	}
+
+	public void setHy(int hy) {
+		this.hy = hy;
+	}
+
+	public int getLx() {
+		return lx;
+	}
+
+	public void setLx(int lx) {
+		this.lx = lx;
+	}
+
+	public int getLy() {
+		return ly;
+	}
+
+	public void setLy(int ly) {
+		this.ly = ly;
+	}
+
+	public boolean isPlaced() {
+		return placed;
+	}
+
+	public void setPlaced(boolean placed) {
+		this.placed = placed;
 	}
 
 }
