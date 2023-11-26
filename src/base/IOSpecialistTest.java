@@ -11,7 +11,7 @@ public class IOSpecialistTest {
 		// Mock the IOLibrary class to simulate user input
 		IOLibrary mockedIOLibrary = mock(IOLibrary.class);
 		// Set up the expected behavior when getString is called
-		when(mockedIOLibrary.getString()).thenReturn("Test Input");
+//		when(mockedIOLibrary.getString()).thenReturn("Test Input");
 
 		// Create an instance of IOSpecialist using the mocked IOLibrary
 		IOSpecialist ioSpecialist = new IOSpecialist();
