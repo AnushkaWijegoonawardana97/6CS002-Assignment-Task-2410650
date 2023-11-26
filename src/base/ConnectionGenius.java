@@ -22,16 +22,20 @@ public class ConnectionGenius {
 	}
 
 	public void downloadWebVersion() {
-		System.out.println("Getting specialised web version.");
-		System.out.println("Wait a couple of moments");
+		printMessage("Getting specialised web version.");
+		printMessage("Wait a couple of moments");
 	}
 
 	public void connectToWebService() {
-		System.out.println("Connecting");
+		printMessage("Connecting");
 	}
 
 	public void awayWeGo() {
-		System.out.println("Ready to play");
+		printMessage("Ready to play");
+	}
+
+	private void printMessage(String message) {
+		System.out.println(message);
 	}
 
 	InetAddress getIpa() {
