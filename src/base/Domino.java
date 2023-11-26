@@ -43,20 +43,28 @@ public class Domino implements Comparable<Domino> {
 		result.append(Integer.toString(getLow()));
 		result.append("]");
 		if (!isPlaced()) {
-			result.append("unplaced");
+			appendUnplacedInfo(result);
 		} else {
-			result.append("(");
-			result.append(Integer.toString(getHx() + 1));
-			result.append(",");
-			result.append(Integer.toString(getHy() + 1));
-			result.append(")");
-			result.append("(");
-			result.append(Integer.toString(getLx() + 1));
-			result.append(",");
-			result.append(Integer.toString(getLy() + 1));
-			result.append(")");
+			appendPlacedInfo(result);
 		}
 		return result.toString();
+	}
+
+	private void appendUnplacedInfo(StringBuffer result) {
+		result.append("unplaced");
+	}
+
+	private void appendPlacedInfo(StringBuffer result) {
+		result.append("(");
+		result.append(Integer.toString(getHx() + 1));
+		result.append(",");
+		result.append(Integer.toString(getHy() + 1));
+		result.append(")");
+		result.append("(");
+		result.append(Integer.toString(getLx() + 1));
+		result.append(",");
+		result.append(Integer.toString(getLy() + 1));
+		result.append(")");
 	}
 
 	/** turn the domino around 180 degrees clockwise */
