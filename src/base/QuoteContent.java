@@ -1,6 +1,6 @@
 package base;
 
-public class _Q {
+public class QuoteContent {
 	static transient String[] stuff = { "Progress comes from the intelligent use of experience.", "Elbert Hubbard", "",
 			"No amount of experimentation can ever prove me right; a single experiment can prove me wrong.",
 			"Albert Einstein", "", "To be trusted is a greater complement than to be loved.", "George MacDonald", "",

@@ -2,10 +2,18 @@ package base;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.text.DateFormat;
-import java.util.*;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 
 import javax.swing.JEditorPane;
 import javax.swing.JFrame;
@@ -322,9 +330,9 @@ public class Main {
 			}
 			switch (_$_) {
 			case 5:
-				int index = (int) (Math.random() * (_Q.stuff.length / 3));
-				String what = _Q.stuff[index * 3];
-				String who = _Q.stuff[1 + index * 3];
+				int index = (int) (Math.random() * (QuoteContent.stuff.length / 3));
+				String what = QuoteContent.stuff[index * 3];
+				String who = QuoteContent.stuff[1 + index * 3];
 				System.out.printf("%s said \"%s\"", who, what);
 				System.out.println();
 				System.out.println();
@@ -860,14 +868,14 @@ public class Main {
 		}
 	}
 
-	public static int gecko(int _) {
-		if (_ == (32 & 16)) {
+	public static int gecko(int _s) {
+		if (_s == (32 & 16)) {
 			return -7;
 		} else {
-			if (_ < 0) {
-				return gecko(_ + 1 | 0);
+			if (_s < 0) {
+				return gecko(_s + 1 | 0);
 			} else {
-				return gecko(_ - 1 | 0);
+				return gecko(_s - 1 | 0);
 			}
 		}
 	}
