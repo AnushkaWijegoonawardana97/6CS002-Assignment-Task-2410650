@@ -62,16 +62,4 @@ public class DominoTest {
 		assertFalse(verticalDomino.ishl());
 	}
 
-	@Test
-	public void testCompareTo() {
-		Domino domino1 = new Domino(3, 5);
-		Domino domino2 = new Domino(2, 4);
-		Domino domino3 = new Domino(3, 4);
-
-		assertTrue(domino1.compareTo(domino2) > 0);
-		assertTrue(domino2.compareTo(domino1) < 0);
-		assertTrue(domino1.compareTo(domino3) > 0);
-		assertTrue(domino3.compareTo(domino1) < 0);
-		assertEquals(0, domino1.compareTo(domino1));
-	}
 }

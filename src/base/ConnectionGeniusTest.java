@@ -6,14 +6,14 @@ import static org.junit.Assert.assertNotNull;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.runners.Parameterized.BeforeParam;
 
 public class ConnectionGeniusTest {
 
 	private ConnectionGenius connectionGenius;
 
-	@BeforeParam
+	@Before
 	public void setUp() throws UnknownHostException {
 		// Set up a ConnectionGenius object with a sample InetAddress for testing
 		InetAddress sampleInetAddress = InetAddress.getByName("127.0.0.1");
