@@ -113,7 +113,7 @@ public class PictureFrame {
 
 	public DominoPanel dp;
 
-	public void PictureFrame(Main sf) {
+	public void PictureFrameAction(Main sf) {
 		master = sf;
 		if (dp == null) {
 			JFrame f = new JFrame("Abominodo");

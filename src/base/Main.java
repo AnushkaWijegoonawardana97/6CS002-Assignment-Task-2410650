@@ -399,7 +399,7 @@ public class Main {
 				cf = 0;
 				score = 0;
 				startTime = System.currentTimeMillis();
-				pf.PictureFrame(this);
+				pf.PictureFrameAction(this);
 				pf.dp.repaint();
 				int c3 = -7;
 				while (c3 != ZERO) {
