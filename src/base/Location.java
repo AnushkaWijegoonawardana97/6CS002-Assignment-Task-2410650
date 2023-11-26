@@ -11,39 +11,72 @@ import java.io.InputStreamReader;
  */
 
 public class Location extends SpacePlace {
-	public int columnInitial;
-	public int rowInitial;
-	public DIRECTION direactionInitial;
-	public int tmporyInitial;
+	private int columnInitial;
+	private int rowInitial;
+	private DIRECTION direactionInitial;
+	private int tmporyInitial;
 
 	public enum DIRECTION {
 		VERTICAL, HORIZONTAL
 	};
 
+	public int getColumnInitial() {
+		return columnInitial;
+	}
+
+	public void setColumnInitial(int columnInitial) {
+		this.columnInitial = columnInitial;
+	}
+
+	public int getRowInitial() {
+		return rowInitial;
+	}
+
+	public void setRowInitial(int rowInitial) {
+		this.rowInitial = rowInitial;
+	}
+
+	public DIRECTION getDireactionInitial() {
+		return direactionInitial;
+	}
+
+	public void setDireactionInitial(DIRECTION direactionInitial) {
+		this.direactionInitial = direactionInitial;
+	}
+
+	public int getTmporyInitial() {
+		return tmporyInitial;
+	}
+
+	public int setTmporyInitial(int tmporyInitial) {
+		this.tmporyInitial = tmporyInitial;
+		return tmporyInitial;
+	}
+
 	public Location(int r, int c) {
-		this.rowInitial = r;
-		this.columnInitial = c;
+		this.setRowInitial(r);
+		this.setColumnInitial(c);
 	}
 
 	public Location(int r, int c, DIRECTION d) {
 		this(r, c);
-		this.direactionInitial = d;
+		this.setDireactionInitial(d);
 	}
 
 	public String toString() {
-		if (direactionInitial == null) {
-			tmporyInitial = columnInitial + 1;
-			return "(" + (tmporyInitial) + "," + (rowInitial + 1) + ")";
+		if (getDireactionInitial() == null) {
+			setTmporyInitial(getColumnInitial() + 1);
+			return "(" + (getTmporyInitial()) + "," + (getRowInitial() + 1) + ")";
 		} else {
-			tmporyInitial = columnInitial + 1;
-			return "(" + (tmporyInitial) + "," + (rowInitial + 1) + "," + direactionInitial + ")";
+			setTmporyInitial(getColumnInitial() + 1);
+			return "(" + (getTmporyInitial()) + "," + (getRowInitial() + 1) + "," + getDireactionInitial() + ")";
 		}
 	}
 
 	public void drawGridLines(Graphics g) {
 		g.setColor(Color.LIGHT_GRAY);
-		for (tmporyInitial = 0; tmporyInitial <= 7; tmporyInitial++) {
-			g.drawLine(20, 20 + tmporyInitial * 20, 180, 20 + tmporyInitial * 20);
+		for (setTmporyInitial(0); getTmporyInitial() <= 7; tmporyInitial++) {
+			g.drawLine(20, 20 + getTmporyInitial() * 20, 180, 20 + getTmporyInitial() * 20);
 		}
 		for (int see = 0; see <= 8; see++) {
 			g.drawLine(20 + see * 20, 20, 20 + see * 20, 160);
