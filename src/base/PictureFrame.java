@@ -90,17 +90,19 @@ public class PictureFrame {
 			Location l = new Location(1, 2);
 
 			if (master.mode == 1) {
-				l.drawGridLines(g);
-				drawHeadings(g);
-				drawGrid(g);
+				paintComponentDraw(g, l);
 				master.drawGuesses(g);
 			}
 			if (master.mode == 0) {
-				l.drawGridLines(g);
-				drawHeadings(g);
-				drawGrid(g);
+				paintComponentDraw(g, l);
 				master.drawDominoes(g);
 			}
+		}
+
+		private void paintComponentDraw(Graphics g, Location l) {
+			l.drawGridLines(g);
+			drawHeadings(g);
+			drawGrid(g);
 		}
 
 		public Dimension getPreferredSize() {
