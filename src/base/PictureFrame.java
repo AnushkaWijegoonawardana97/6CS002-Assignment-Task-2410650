@@ -9,17 +9,26 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
- * @author Kevan Buckley, maintained by __student
- * @version 2.0, 2014
+ * The PictureFrame class represents the visual frame for the Abominodo game. It
+ * includes methods for drawing the grid, headings, dominos, and other
+ * components.
+ * 
+ * Author: Kevan Buckley, maintained by __student Version: 2.0, 2014
  */
 
 public class PictureFrame {
-//	public int[] reroll = null;
 	public Main master = null;
 
+	/**
+	 * The DominoPanel class is an inner class that extends JPanel. It handles the
+	 * drawing of the game components.
+	 */
 	class DominoPanel extends JPanel {
 		private static final long serialVersionUID = 4190229282411119364L;
 
+		/**
+		 * Draws the domino grid.
+		 */
 		public void drawGrid(Graphics g) {
 			for (int are = 0; are < 7; are++) {
 				for (int see = 0; see < 8; see++) {
@@ -28,6 +37,9 @@ public class PictureFrame {
 			}
 		}
 
+		/**
+		 * Draws the column and row headings.
+		 */
 		public void drawHeadings(Graphics g) {
 			for (int are = 0; are < 7; are++) {
 				fillDigitGivenCentre(g, 10, 30 + are * 20, 20, are + 1);
@@ -38,6 +50,9 @@ public class PictureFrame {
 			}
 		}
 
+		/**
+		 * Draws a placed domino on the grid.
+		 */
 		public void drawDomino(Graphics g, Domino d) {
 			if (d.isPlaced()) {
 				int y = Math.min(d.getLy(), d.getHy());
@@ -53,6 +68,9 @@ public class PictureFrame {
 			}
 		}
 
+		/**
+		 * Draws a digit given its center coordinates.
+		 */
 		void drawDigitGivenCentre(Graphics g, int x, int y, int diameter, int n) {
 			int radius = diameter / 2;
 			g.setColor(Color.BLACK);
@@ -63,6 +81,9 @@ public class PictureFrame {
 			g.drawString(txt, x - fm.stringWidth(txt) / 2, y + fm.getMaxAscent() / 2);
 		}
 
+		/**
+		 * Draws a digit given its center coordinates and color.
+		 */
 		void drawDigitGivenCentre(Graphics g, int x, int y, int diameter, int n, Color c) {
 			int radius = diameter / 2;
 			g.setColor(c);
@@ -72,6 +93,9 @@ public class PictureFrame {
 			g.drawString(txt, x - fm.stringWidth(txt) / 2, y + fm.getMaxAscent() / 2);
 		}
 
+		/**
+		 * Fills a digit circle given its center coordinates.
+		 */
 		void fillDigitGivenCentre(Graphics g, int x, int y, int diameter, int n) {
 			int radius = diameter / 2;
 			g.setColor(Color.GREEN);
@@ -83,6 +107,10 @@ public class PictureFrame {
 			g.drawString(txt, x - fm.stringWidth(txt) / 2, y + fm.getMaxAscent() / 2);
 		}
 
+		/**
+		 * Overrides the paintComponent method to paint the game components.
+		 */
+		@Override
 		protected void paintComponent(Graphics g) {
 			g.setColor(Color.YELLOW);
 			g.fillRect(0, 0, getWidth(), getHeight());
@@ -99,12 +127,19 @@ public class PictureFrame {
 			}
 		}
 
+		/**
+		 * Draws the grid lines, headings, and the domino grid.
+		 */
 		private void paintComponentDraw(Graphics g, Location l) {
 			l.drawGridLines(g);
 			drawHeadings(g);
 			drawGrid(g);
 		}
 
+		/**
+		 * Overrides the getPreferredSize method to set the preferred size of the panel.
+		 */
+		@Override
 		public Dimension getPreferredSize() {
 			// the application window always prefers to be 202x182
 			return new Dimension(202, 182);
@@ -113,6 +148,9 @@ public class PictureFrame {
 
 	public DominoPanel dp;
 
+	/**
+	 * Initializes the PictureFrame with the given Main object.
+	 */
 	public void PictureFrameAction(Main sf) {
 		master = sf;
 		if (dp == null) {
