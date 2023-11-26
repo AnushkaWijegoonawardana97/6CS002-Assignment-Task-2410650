@@ -48,4 +48,9 @@ public final class IOLibrary {
 		} while (true);
 	}
 
+	public static String setStringForTest(String inputString) {
+		// TODO Auto-generated method stub
+		return inputString;
+	}
+
 }

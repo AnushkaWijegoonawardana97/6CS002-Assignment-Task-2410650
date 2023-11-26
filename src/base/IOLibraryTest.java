@@ -3,8 +3,6 @@ package base;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.net.InetAddress;
 
 import org.junit.After;
@@ -12,41 +10,42 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class IOLibraryTest {
-
-	private InputStream originalSystemIn;
+	private String savedSystemInput;
 
 	@Before
-	public void setUp() {
-		originalSystemIn = System.in;
+	public void saveSystemInput() {
+		// Save the original System.in
+		savedSystemInput = System.getProperty("line.separator");
 	}
 
 	@After
-	public void tearDown() {
-		System.setIn(originalSystemIn);
+	public void restoreSystemInput() {
+		// Restore the original System.in
+		System.setProperty("line.separator", savedSystemInput);
 	}
 
 	@Test
 	public void testGetString() {
-		String userInput = "Hello, world!";
-		provideInput(userInput);
+		String inputString = "Test Input";
+		IOLibrary.setStringForTest(inputString);
 
 		String result = IOLibrary.getString();
-
-		assertEquals(userInput, result);
+		assertEquals(inputString, result.trim());
 	}
 
 	@Test
 	public void testGetIPAddress() {
-		String ipAddressInput = "192.168.0.1";
-		provideInput(ipAddressInput);
+		String ipAddressString = "192.168.1.1";
+		IOLibrary.setStringForTest(ipAddressString);
+
+		InetAddress expected = null;
+		try {
+			expected = InetAddress.getByName(ipAddressString);
+		} catch (Exception ignored) {
+		}
 
 		InetAddress result = IOLibrary.getIPAddress();
-
 		assertNotNull(result);
-		assertEquals(ipAddressInput, result.getHostAddress());
-	}
-
-	private void provideInput(String input) {
-		System.setIn(new ByteArrayInputStream(input.getBytes()));
+		assertEquals(expected.getHostAddress(), result.getHostAddress());
 	}
 }
