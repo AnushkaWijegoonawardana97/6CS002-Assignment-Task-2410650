@@ -9,10 +9,10 @@ import java.net.InetAddress;
 
 public class ConnectionGenius {
 
-	InetAddress ipa;
+	private InetAddress ipa;
 
 	public ConnectionGenius(InetAddress ipa) {
-		this.ipa = ipa;
+		this.setIpa(ipa);
 	}
 
 	public void fireUpGame() {
@@ -32,6 +32,14 @@ public class ConnectionGenius {
 
 	public void awayWeGo() {
 		System.out.println("Ready to play");
+	}
+
+	InetAddress getIpa() {
+		return ipa;
+	}
+
+	void setIpa(InetAddress ipa) {
+		this.ipa = ipa;
 	}
 
 }
